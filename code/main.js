@@ -1,5 +1,6 @@
 $( document ).ready(function() {
 
+    // Business hours used for generating the Pickup Time Intervals
     var businessHours = [
         ['12:00', '16:30'],
         [],
@@ -10,10 +11,12 @@ $( document ).ready(function() {
         ['11:00', '22:30']
     ];
 
+    // Helper function for getPickupTimeIntervals
     addMinutes = function (date, minutes) {
         return new Date(date.getTime() + minutes * 60000);
     };
 
+    // Method takes in a date and calculates 15 minute increment time slots.
     getPickupTimeIntervals = function (tDay) {
         var t = new Date();
         var d = new Date();
@@ -107,6 +110,7 @@ $( document ).ready(function() {
     };
 
 
+    // On change event to populate the select statememnt with the getPickupTimeIntervals
     $('#datetimepicker11').on('dp.change', function(e) {
         $("#selectpicker").empty();
 
