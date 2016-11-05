@@ -7,15 +7,15 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../favicon.ico">
+    <link rel="icon" href="/favicon.ico">
 
     <title>Tea & Cookies</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
@@ -29,7 +29,7 @@
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]>
     <script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="/assets/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -41,13 +41,13 @@
 ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.js"></script>
-    <script type="text/javascript" src="../dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
 
     <script src="main.js"></script>
 
@@ -73,18 +73,18 @@
                 <h2 class="cover-heading">Pick up a Box of Cookies</h2>
             </div>
             <div class="row">
-                <form class="form-inline">
+                <form class="form-inline" action="action.php" method="post">
                     <div class="form-group">
                         <div class="radio">
                             <label>Box of Cookies: </label>
                             <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="cookieBox" value="popular" required> the Popular Assorted Box
+                                <input type="radio" name="box" id="cookieBox" value="popular" required> the Popular Assorted Box
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="cookieBox" value="gluten"> the Gluten Free Box
+                                <input type="radio" name="box" id="cookieBox" value="gluten"> the Gluten Free Box
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="cookieBox" value="custom"> the Custom Box
+                                <input type="radio" name="box" id="cookieBox" value="custom"> the Custom Box
                             </label>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                     <div class="form-group">
                         <label for="datetimepicker11">Date: </label>
                         <div class='input-group date' id='datetimepicker11'>
-                            <input type='text' class="form-control" readonly required/>
+                            <input type='text' class="form-control" name="pickup-date" readonly required/>
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-calendar">
                                 </span>
@@ -112,12 +112,12 @@
                     <div class="form-group">
                         <label for="pick-up-time-intervals">Time: </label>
                         <div class="input-group times" id="pick-up-time-intervals">
-                            <select class="form-control" id="selectpicker" required>
+                            <select class="form-control" name="pickup-time" id="selectpicker" required>
                             </select>
                         </div>
                     </div>
                     <div class="row">
-                        <button type="submit" class="btn btn-danger btn-lg">Book</button>
+                        <button type="submit" name="pickup-submit" class="btn btn-danger btn-lg">Book</button>
                     </div>
 
                 </form>
