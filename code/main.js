@@ -29,7 +29,7 @@ $( document ).ready(function() {
         result.push("");
 
         // If tDay is specified, initialize d with date
-        if (tDay != null) {
+        if (tDay != undefined && tDay != "Invalid Date"  && tDay != null) {
             if (Object.prototype.toString.call(tDay) === '[object Date]') {
                 d = tDay;
             } else {
@@ -105,7 +105,7 @@ $( document ).ready(function() {
         }
         while (parsedTime.getTime() < endTime.getTime());
 
-        console.log(result);
+        console.log(result.toString());
         return result;
     };
 
